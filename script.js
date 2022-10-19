@@ -22,6 +22,16 @@ function pizzaIngrediente (tipoCorteza){
             ingredientesBase.push(ingredientes[i])
         }
     }
+    else if (tipoCorteza == "borde de queso"){
+        for(i = 1; i < 4; i++){
+            ingredientesBase.push(ingredientes[i])
+        }
+    }
+    else if (tipoCorteza == "casera"){
+        for(i = 0; i < 5; i++){
+            ingredientesBase.push(ingredientes[i])
+        }
+    }
 
     return ingredientesBase;
 }
@@ -49,7 +59,7 @@ function pizzaOven (tipoCorteza, tipoSalsa, quesos, ingredientes){
 
 // FIN - Definición función que determina las pizzas solicitadas
 
-// INICIO - Definición función que determina las pizzas aleatorias
+// INICIO - Definición función que determina la pizza aleatoria
 
 function randomPizzaOven (tipoCorteza, tipoSalsa, quesos, ingredientes){
     let ranPizza={};
@@ -66,15 +76,15 @@ function randomPizzaOven (tipoCorteza, tipoSalsa, quesos, ingredientes){
     return ranPizza;
 }
 
-// FIN - Definición función que determina las pizzas aleatorias
+// FIN - Definición función que determina la pizza aleatoria
 
 // INICIO - Ejecución funciones de pizzas
 
 let pizza1= pizzaOven(tipoCorteza[0], tipoSalsa[0], quesos[0], ingredientes);
 let pizza2 = pizzaOven(tipoCorteza[1], tipoSalsa[1], quesos[0], ingredientes);
-let randomPizza1 = randomPizzaOven(tipoCorteza, tipoSalsa, quesos, ingredientes);
-let randomPizza2 = randomPizzaOven(tipoCorteza, tipoSalsa, quesos, ingredientes);
-let randomPizza3 = randomPizzaOven(tipoCorteza, tipoSalsa, quesos, ingredientes);
+let pizza3 = pizzaOven(tipoCorteza[2], tipoSalsa[2], quesos[1], ingredientes);
+let pizza4 = pizzaOven(tipoCorteza[3], tipoSalsa[3], quesos[2], ingredientes);
+let randomPizza = randomPizzaOven(tipoCorteza, tipoSalsa, quesos, ingredientes);
 
 // FIN - Ejecución funciones de pizzas
 
@@ -82,7 +92,8 @@ let randomPizza3 = randomPizzaOven(tipoCorteza, tipoSalsa, quesos, ingredientes)
 
 console.log(pizza1)
 console.log(pizza2)
-console.log(randomPizza1)
-console.log(randomPizza2)
+console.log(pizza3)
+console.log(pizza4)
+console.log(randomPizza)
 
 // FIN - Visualización pizzas preparadas
